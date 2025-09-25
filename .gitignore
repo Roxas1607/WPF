@@ -1,0 +1,62 @@
+# Fichiers de build
+bin/
+obj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]og/
+[Ll]ogs/
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.rsuser
+
+# Visual Studio
+.vs/
+
+# Paquets NuGet
+*.nupkg
+*.snupkg
+*.nuspec
+packages/
+# garder packages.config si présent
+!packages.config
+
+# Caches et temporaires
+*.cache
+*.log
+*.tlog
+*.vspscc
+*.vssscc
+*.dbmdl
+
+# Fichiers de publication
+publish/
+PublishProfiles/
+
+# Test et coverage
+TestResults/
+*.coverage
+*.coveragexml
+
+# Fichiers système
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Sauvegardes
+*.bak
+*.tmp
+*.old
+*.orig
+
+# Rider / JetBrains
+.idea/
+*.sln.iml
+
+# Autres outils
+*.swp
+*.lock
