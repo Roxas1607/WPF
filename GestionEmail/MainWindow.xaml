@@ -3,30 +3,21 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        
         xmlns:local="clr-namespace:GestionEmail"
         mc:Ignorable="d"
         Title="GestionMail" Height="450" Width="800">
-    <Grid Height="434" VerticalAlignment="Top">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="237*"/>
-            <ColumnDefinition Width="241*"/>
-            <ColumnDefinition Width="91*"/>
-            <ColumnDefinition Width="0*"/>
-            <ColumnDefinition Width="108*"/>
-            <ColumnDefinition Width="14*"/>
-            <ColumnDefinition Width="109*"/>
-        </Grid.ColumnDefinitions>
+    <Grid >
+        
 
-        <TextBox x:Name="TxtBonjour" Text="Bonjour a tous " Margin="10,0,119,402" />
-        <TextBox x:Name="TxtEmail" Text="Entrer votre Email " 
-                  TextWrapping="Wrap" Margin="18,37,63,363" />
+        <TextBox x:Name="TxtBonjour" Text="Bonjour a tous " Margin="10,0,119,402" Grid.ColumnSpan="2" />
 
-        <TextBox x:Name="TxtDestiation" Text="Entrer  Email de destination " 
-          TextWrapping="Wrap" Margin="16,37,78,363" Grid.Column="1" />
+        <TextBox x:Name="TxtDestination" Text="Entrer  Email de destination " 
+          TextWrapping="Wrap" Margin="45,37,45,363" Grid.Column="1" />
         <TextBox x:Name="TxtText" Text="Entrer  Email de destination " 
-  TextWrapping="Wrap" Margin="27,109,120,116" Grid.ColumnSpan="2" />
+  TextWrapping="Wrap" Margin="27,109,120,116" Grid.ColumnSpan="3" />
         <Button x:Name="button" Content="envoyer " HorizontalAlignment="Left" Margin="118,363,0,0" VerticalAlignment="Top" 
-                Click="button_Click"/>
+                Click="button_Click" Grid.ColumnSpan="2"/>
 
 
 

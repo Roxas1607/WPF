@@ -1,4 +1,5 @@
-﻿using System.Net.Mail;
+﻿using System;
+using System.Net.Mail;
 using System.Net;
 using System.Text;
 using System.Windows;
@@ -28,23 +29,34 @@ namespace GestionEmail
         {
 
         }
-
         private void button_Click(object sender, RoutedEventArgs e)
         {
             try
             {
                
-                string depart  = TxtEmail.Text.Trim();
-                string destination= TxtDestiation.Text.Trim();
-                string mdp = TxtMdp.Text.Trim();
+                string email_proprio = "hova1608@gmail.com";
+                string mdp = "nnbudxddyvgxcxzo"; // mot de passe d’application Gmail
 
-                string sujet = TxtBonjour.Text.Trim();
+                // Récupération de l’UI
+                string email_destiantion = TxtDestination.Text.Trim();
+                string body = TxtText.Text.Trim();
 
-                string corps= TxtText.Text.Trim();
+                // Vérification basique
+                if (string.IsNullOrEmpty(email_destiantion) || string.IsNullOrEmpty(body))
+                {
+                    MessageBox.Show("Veuillez remplir l’adresse et le message.");
+                    return;
+                }
 
-                MailMessage mail = new MailMessage(depart, destination, sujet, corps);
+                // Création du mail
+                MailMessage mail = new MailMessage(email_proprio, email_destiantion);
+                mail.Subject = "Message automatique";
+                mail.Body = body;
+
+                // Config SMTP Gmail
                 SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
-                smtp.Credentials = new NetworkCredential(depart, mdp);
+                smtp.UseDefaultCredentials = false;
+                smtp.Credentials = new NetworkCredential(email_proprio, mdp);
                 smtp.EnableSsl = true;
 
                 // Envoi
@@ -58,4 +70,6 @@ namespace GestionEmail
             }
         }
     }
-}
+
+
+    }
